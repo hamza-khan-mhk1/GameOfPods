@@ -10,7 +10,7 @@ kubectl create -f eveloper-role.yaml
 kubectl create rolebinding developer-rolebinding --role=developer-role --user=drogo --namespace=development
 ```
 
----
+```
 
 apiVersion: v1
 clusters:
@@ -43,7 +43,7 @@ Please refresh to get a new environment.
     client-key-data: LS0tLS1CRUdJTiBSU0EgUFJJVkFURSBLRVktLS0tLQpNSUlFcEFJQkFBS0NBUUVBdUE2L2FIbU9BWWYybEkxbDByVlhGeXRHYmZyTGRDQmZsWDR2cjZKWEY5N0Npc1NJCjJSdGlRS0ZQSWVIWGdI
 ~ 
 
----
+```
 
 ```yaml
 apiVersion: v1

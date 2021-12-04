@@ -10,6 +10,40 @@ kubectl create -f eveloper-role.yaml
 kubectl create rolebinding developer-rolebinding --role=developer-role --user=drogo --namespace=development
 ```
 
+---
+
+apiVersion: v1
+clusters:
+- cluster:
+    certificate-authority-data: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUN5RENDQWJDZ0F3SUJBZ0lCQURBTkJna3Foa2lHOXcwQkFRc0ZBREFWTVJNd0VRWURWUVFERXdwcmRXSmwKY201bGRHVnpNQ
+    server: https://172.17.0.16:6443
+  name: kubernetes
+contexts:
+- context:
+    cluster: kubernetes
+    namespace: development
+    user: kubernetes-admin
+  name: kubernetes-admin@kubernetes
+- context:
+    cluster: kubernetes
+    namespace: development
+    user: drogo
+  name: drogo@kubernetes
+current-context: drogo@kubernetes
+The environment has expired.
+preferences: {}
+Please refresh to get a new environment.
+- name: drogo
+  user: 
+    client-certificate-data: /root/drogo.crt
+    client-key-data: /root/drogo.key
+- name: kubernetes-admin
+  user:
+    client-certificate-data: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUM4akNDQWRxZ0F3SUJBZ0lJSjBhMXFiaEw4OXd3RFFZSktvWklodmNOQVFFTEJRQXdGVEVUTUJFR0ExVUUKQXhNS2EzVmlaWEp1
+    client-key-data: LS0tLS1CRUdJTiBSU0EgUFJJVkFURSBLRVktLS0tLQpNSUlFcEFJQkFBS0NBUUVBdUE2L2FIbU9BWWYybEkxbDByVlhGeXRHYmZyTGRDQmZsWDR2cjZKWEY5N0Npc1NJCjJSdGlRS0ZQSWVIWGdI
+~ 
+
+---
 
 ```yaml
 apiVersion: v1
